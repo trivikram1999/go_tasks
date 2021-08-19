@@ -17,7 +17,7 @@ func PerformOperation(op1 float64, op2 float64, opt string) float64 {
 	case "/":
 		if op2 == 0 {
 			return(math.Inf(1))
-			panic("Can not divide by Zero")
+			// panic("Can not divide by Zero")
 			
 		}
 		ans = op1 / op2
