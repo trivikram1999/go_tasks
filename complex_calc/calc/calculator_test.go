@@ -26,7 +26,7 @@ func TestCalculate(t *testing.T) {
 			args: args{
 				exp: "10 + 9 / 0",
 			},
-			want:    "+Inf",
+			want:    "-999",
 			wantErr: true,
 		},
 	}

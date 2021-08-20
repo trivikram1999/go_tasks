@@ -31,7 +31,8 @@ func Calculate(exp string) (string, error) {
 
 		ans, err = operate.PerformOperation(op1, op2, v)
 		if err != nil {
-			return fmt.Sprintf("%v", ans), fmt.Errorf("warning: %s", err)
+			result := fmt.Sprintf("%v", ans)
+			return result, fmt.Errorf("warning: %s", err)
 		}
 		ops = append([]float64{ans}, ops[2:]...)
 	}

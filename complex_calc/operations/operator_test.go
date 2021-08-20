@@ -1,7 +1,6 @@
 package operations
 
 import (
-	"math"
 	"testing"
 )
 
@@ -65,7 +64,7 @@ func TestPerformOperation(t *testing.T) {
 				op2: 0,
 				opt: "/",
 			},
-			want:    math.Inf(+1),
+			want:    -999,
 			wantErr: true,
 		},
 		{
