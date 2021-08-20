@@ -2,7 +2,6 @@ package main
 
 import (
 	"complex_calc/calc"
-	//"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -31,9 +30,9 @@ func ansPage(w http.ResponseWriter, r *http.Request) {
 	}
 	var result string
 	var err1 error
+	var p Result
 	expr := r.Form.Get("expr")
 	result, err1 = calc.Calculate(string(expr))
-	var p Result
 	if err1 == nil {
 		p = Result{Expression: string(expr), Answer: result}
 	} else {
@@ -42,5 +41,4 @@ func ansPage(w http.ResponseWriter, r *http.Request) {
 
 	t, _ := template.ParseFiles("template/finalpage.html")
 	t.Execute(w, p)
-	//fmt.Fprintf(w, result)
 }

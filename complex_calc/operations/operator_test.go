@@ -68,6 +68,16 @@ func TestPerformOperation(t *testing.T) {
 			want:    math.Inf(+1),
 			wantErr: true,
 		},
+		{
+			name: "default_case",
+			args: args{
+				op1: 10,
+				op2: 13,
+				opt: "^",
+			},
+			want:    0,
+			wantErr: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

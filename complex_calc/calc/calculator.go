@@ -1,53 +1,40 @@
 package calc
 
 import (
-	// "bufio"
+	operate "complex_calc/operations"
 	"fmt"
-	// "os"
 	"strconv"
 	"strings"
-
-	//"errors"
-	operate "complex_calc/operations"
 )
 
-//Calculate is a function to calculate
+//Calculate performs calculator operations
 func Calculate(exp string) (string, error) {
-	// fmt.Println("Enter The space seperated expression")
-	// consoleReader := bufio.NewReader(os.Stdin)
-	// exp, _ := consoleReader.ReadString('\n')
 
 	var ans float64
 	var err error
-	// fmt.Scan(&exp)
-	// fmt.Println(exp)
 
-	res := strings.Fields(exp) // 5 + 9 -9..... res =[ 5 +  9 - 9]
-	// fmt.Println(res)
+	res := strings.Fields(exp)
 	ops := []float64{}
 	opt := []string{}
 
 	for _, v := range res {
 		s, err1 := strconv.Atoi(v)
 		if err1 == nil {
-			ops = append(ops, float64(s)) //ops=[5 9 9]
+			ops = append(ops, float64(s))
 		} else {
-			opt = append(opt, v) //opt= [+ -]
+			opt = append(opt, v)
 		}
-
 	}
 	for _, v := range opt {
 		op1 := ops[0]
 		op2 := ops[1]
 
 		ans, err = operate.PerformOperation(op1, op2, v)
-		//fmt.Println(ans)
-		if ops[2:] == nil {
-			break
+		if err != nil {
+			return fmt.Sprintf("%v", ans), fmt.Errorf("warning: %s", err)
 		}
 		ops = append([]float64{ans}, ops[2:]...)
 	}
 	result := fmt.Sprintf("%v", ans)
-	//fmt.Println(result, err)
 	return result, err
 }
