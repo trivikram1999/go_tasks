@@ -1,0 +1,10 @@
+mode: set
+complex_calc/calc/calculator.go:15.44,30.24 6 1
+complex_calc/calc/calculator.go:39.2,39.24 1 1
+complex_calc/calc/calculator.go:50.2,52.20 2 1
+complex_calc/calc/calculator.go:30.24,32.18 2 1
+complex_calc/calc/calculator.go:32.18,34.4 1 1
+complex_calc/calc/calculator.go:34.9,36.4 1 1
+complex_calc/calc/calculator.go:39.24,45.21 4 1
+complex_calc/calc/calculator.go:48.3,48.43 1 1
+complex_calc/calc/calculator.go:45.21,46.9 1 0
